@@ -27,7 +27,8 @@ module HotelBeds
       end
 
       def child_ages
-        rooms.map(&:child_ages).flatten_children
+        rooms.first.child_ages
+        # rooms.map(&:child_ages).flatten_children
       end
 
       def adult_count
