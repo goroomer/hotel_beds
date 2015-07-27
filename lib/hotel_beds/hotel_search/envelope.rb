@@ -12,7 +12,7 @@ module HotelBeds
           :CheckInDate => check_in_date,
           :CheckOutDate => check_out_date,
           :OccupancyList => occupancy_list
-        }.merge(Hash(destination)).merge(Hash(hotels)).merge(Hash(extra_params))
+        }.merge(Hash(destination)).merge(Hash(stars)).merge(Hash(hotels)).merge(Hash(extra_params))
       end
 
       private
@@ -53,6 +53,13 @@ module HotelBeds
         { Destination: {
           :@code => String(__getobj__.destination_code).upcase,
           :@type => "SIMPLE"
+        } }
+      end
+
+      def stars
+        { Stars: {
+            :@code => String(__getobj__.stars_code).upcase,
+            :@type => "SIMPLE"
         } }
       end
 

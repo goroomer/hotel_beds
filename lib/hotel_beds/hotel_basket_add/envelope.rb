@@ -21,6 +21,10 @@ module HotelBeds
               Destination: {
                 :@code => service.destination_code,
                 :@type => "SIMPLE"
+              },
+              Stars: {
+                  :@code => service.stars_code,
+                  :@type => "SIMPLE"
               }
             },
             :AvailableRoom => available_rooms

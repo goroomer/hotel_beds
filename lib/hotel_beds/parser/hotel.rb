@@ -1,6 +1,7 @@
 require "hotel_beds/parser"
 require "hotel_beds/parser/contract"
 require "hotel_beds/parser/destination"
+require "hotel_beds/parser/stars"
 require "hotel_beds/parser/available_room"
 
 module HotelBeds

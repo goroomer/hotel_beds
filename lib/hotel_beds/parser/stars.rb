@@ -7,7 +7,6 @@ module HotelBeds
       # attributes
       attribute :type, attr: "type"
       attribute :code, attr: "code"
-      attribute :shortname, attr: "shortname"
     end
   end
 end
