@@ -18,6 +18,8 @@ module HotelBeds
       attribute :latitude, selector: "Position", attr: "latitude"
       attribute :contract, selector: "ContractList > Contract",
         parser: HotelBeds::Parser::Contract
+      attribute :stars, selector: "HotelInfo > Category",
+        parser: HotelBeds::Parser::Stars
       attribute :destination, selector: "HotelInfo > Destination",
         parser: HotelBeds::Parser::Destination
       attribute :available_rooms, selector: "AvailableRoom", multiple: true,
