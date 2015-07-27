@@ -2,7 +2,7 @@ require "hotel_beds/model"
 
 module HotelBeds
   module Model
-    class Stars
+    class Category
       include HotelBeds::Model
       # attributes
       attribute :type, String

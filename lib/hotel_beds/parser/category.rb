@@ -2,7 +2,7 @@ require "hotel_beds/parser"
 
 module HotelBeds
   module Parser
-    class Stars
+    class Category
       include HotelBeds::Parser
       # attributes
       attribute :type, attr: "type"

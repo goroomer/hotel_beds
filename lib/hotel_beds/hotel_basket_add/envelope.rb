@@ -22,8 +22,8 @@ module HotelBeds
                 :@code => service.destination_code,
                 :@type => "SIMPLE"
               },
-              Stars: {
-                  :@code => service.stars_code,
+              Category: {
+                  :@code => service.category_code,
                   :@type => "SIMPLE"
               }
             },
