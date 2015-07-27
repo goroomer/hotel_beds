@@ -12,7 +12,8 @@ module HotelBeds
           :CheckInDate => check_in_date,
           :CheckOutDate => check_out_date,
           :OccupancyList => occupancy_list
-        }.merge(Hash(destination)).merge(Hash(category)).merge(Hash(hotels)).merge(Hash(extra_params))
+        }.merge(Hash(destination)).merge(Hash(hotels)).merge(Hash(extra_params))
+        # }.merge(Hash(destination)).merge(Hash(category)).merge(Hash(hotels)).merge(Hash(extra_params))
       end
 
       private
@@ -56,12 +57,12 @@ module HotelBeds
         } }
       end
 
-      def category
-        { Category: {
-            :@code => String(__getobj__.category_code).upcase,
-            :@type => "SIMPLE"
-        } }
-      end
+      # def category
+      #   { Category: {
+      #       :@code => String(__getobj__.category_code).upcase,
+      #       :@type => "SIMPLE"
+      #   } }
+      # end
 
       def hotels
         if Array(__getobj__.hotel_codes).any?
