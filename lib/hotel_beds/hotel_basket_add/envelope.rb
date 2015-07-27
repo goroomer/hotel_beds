@@ -21,10 +21,6 @@ module HotelBeds
               Destination: {
                 :@code => service.destination_code,
                 :@type => "SIMPLE"
-              },
-              Category: {
-                  :@code => service.category_code,
-                  :@type => "SIMPLE"
               }
             },
             :AvailableRoom => available_rooms

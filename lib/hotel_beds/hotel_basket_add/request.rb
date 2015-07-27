@@ -17,7 +17,6 @@ module HotelBeds
         attribute :check_out_date, Date
         attribute :hotel_code, String
         attribute :destination_code, String
-        attribute :category_code, String
         attribute :rooms, Array[HotelBeds::Model::AvailableRoom]
 
         # validation
