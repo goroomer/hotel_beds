@@ -20,7 +20,7 @@ module HotelBeds
       attribute :available_rooms, Array[HotelBeds::Model::AvailableRoom]
       attribute :contract, HotelBeds::Model::Contract
       attribute :destination, HotelBeds::Model::Destination
-      # attribute :taxes, HotelBeds::Model::Tax
+      attribute :taxes, HotelBeds::Model::Tax
 
       def grouped_rooms(requested_rooms)
         HotelBeds::Parser::RoomGrouper.new(requested_rooms, available_rooms).groups
