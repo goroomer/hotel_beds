@@ -23,8 +23,8 @@ module HotelBeds
         parser: HotelBeds::Parser::Destination
       attribute :available_rooms, selector: "AvailableRoom", multiple: true,
         parser: HotelBeds::Parser::AvailableRoom
-      attribute :taxes, selector: "HotelInfo > TaxList", multiple: true,
-        parser: HotelBeds::Parser::Tax
+      # attribute :taxes, selector: "HotelInfo > TaxList", multiple: true,
+      #   parser: HotelBeds::Parser::Tax
     end
   end
 end
