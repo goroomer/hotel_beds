@@ -21,7 +21,10 @@ module HotelBeds
       attribute :room_type_code, selector: "HotelRoom RoomType", attr: "code"
       attribute :room_type_characteristic,
         selector: "HotelRoom RoomType", attr: "characteristic"
-      attribute :price, selector: "HotelRoom > Price > Amount"
+      attribute :price_amount, selector: "HotelRoom > Price > Amount"
+      attribute :net_price, selector: "HotelRoom > Price > NetPrice"
+      attribute :selling_price, selector: "HotelRoom > Price > SellingPrice"
+      attribute :is_selling_price_mandatory, selector: "HotelRoom > Price > SellingPrice", attr: "mandatory"
       attribute :taxes,
                 selector: "HotelRoom > TaxList > Tax", multiple: true,
                 parser: HotelBeds::Parser::Tax

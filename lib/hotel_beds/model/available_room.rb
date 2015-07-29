@@ -15,7 +15,10 @@ module HotelBeds
       attribute :board_code, String
       attribute :room_type_code, String
       attribute :room_type_characteristic, String
-      attribute :price, BigDecimal
+      attribute :price_amount, BigDecimal
+      attribute :net_price, BigDecimal
+      attribute :selling_price, BigDecimal
+      attribute :is_selling_price_mandatory, String
       attribute :taxes, Array[HotelBeds::Model::Tax],
                 default: Array.new
       attribute :number_available, Integer
@@ -24,6 +27,9 @@ module HotelBeds
         default: Array.new
       attribute :customers, Array[HotelBeds::Model::Customer],
         default: Array.new
+
+      # validation
+      validates :is_selling_price_mandatory, length: { is: 1 }
 
       def rates=(values)
         if values.kind_of?(Array)
