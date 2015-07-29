@@ -23,7 +23,7 @@ module HotelBeds
         selector: "HotelRoom RoomType", attr: "characteristic"
       attribute :price, selector: "HotelRoom > Price > Amount"
       attribute :taxes,
-                selector: "HotelInfo > TaxList > Tax", multiple: true,
+                selector: "HotelRoom > TaxList > Tax", multiple: true,
                 parser: HotelBeds::Parser::Tax
       attribute :cancellation_policies,
         selector: "HotelRoom CancellationPolicy", multiple: true,
