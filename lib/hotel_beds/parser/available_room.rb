@@ -2,6 +2,7 @@ require "hotel_beds/parser"
 require "hotel_beds/parser/cancellation_policy"
 require "hotel_beds/parser/price"
 require "hotel_beds/parser/customer"
+require "hotel_beds/parser/tax"
 
 module HotelBeds
   module Parser
@@ -21,6 +22,9 @@ module HotelBeds
       attribute :room_type_characteristic,
         selector: "HotelRoom RoomType", attr: "characteristic"
       attribute :price, selector: "HotelRoom > Price > Amount"
+      attribute :taxes,
+                selector: "HotelInfo > TaxList > Tax", multiple: true,
+                parser: HotelBeds::Parser::Tax
       attribute :cancellation_policies,
         selector: "HotelRoom CancellationPolicy", multiple: true,
         parser: HotelBeds::Parser::CancellationPolicy

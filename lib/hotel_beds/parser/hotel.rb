@@ -1,7 +1,6 @@
 require "hotel_beds/parser"
 require "hotel_beds/parser/contract"
 require "hotel_beds/parser/destination"
-require "hotel_beds/parser/tax"
 require "hotel_beds/parser/available_room"
 
 module HotelBeds
@@ -23,8 +22,6 @@ module HotelBeds
         parser: HotelBeds::Parser::Destination
       attribute :available_rooms, selector: "AvailableRoom", multiple: true,
         parser: HotelBeds::Parser::AvailableRoom
-      # attribute :taxes, selector: "HotelInfo > TaxList", multiple: true,
-      #   parser: HotelBeds::Parser::Tax
     end
   end
 end

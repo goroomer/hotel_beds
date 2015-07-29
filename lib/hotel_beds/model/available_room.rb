@@ -2,6 +2,7 @@ require "hotel_beds/model/room"
 require "hotel_beds/model/price"
 require "hotel_beds/model/cancellation_policy"
 require "hotel_beds/model/customer"
+require "hotel_beds/model/tax"
 
 module HotelBeds
   module Model
@@ -15,6 +16,8 @@ module HotelBeds
       attribute :room_type_code, String
       attribute :room_type_characteristic, String
       attribute :price, BigDecimal
+      attribute :taxes, Array[HotelBeds::Model::Tax],
+                default: Array.new
       attribute :number_available, Integer
       attribute :rates, Hash[Date => BigDecimal]
       attribute :cancellation_policies, Array[HotelBeds::Model::CancellationPolicy],
