@@ -11,10 +11,15 @@ module HotelBeds
       attribute :child_ages, Array[Integer], default: Array.new
 
       # validation
-      validates :adult_count, :child_count, numericality: {
+      validates :adult_count, numericality: {
         greater_than_or_equal_to: 0,
-        less_than_or_equal_to: 4,
+        less_than_or_equal_to: 6,
         only_integer: true,
+      }
+      validates :child_count, numericality: {
+          greater_than_or_equal_to: 0,
+          less_than_or_equal_to: 3,
+          only_integer: true,
       }
       validate do |room|
         unless child_ages.compact.size == child_count
