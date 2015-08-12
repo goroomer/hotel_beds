@@ -73,7 +73,7 @@ module HotelBeds
       end
 
       def show_cancellation_policy
-        String(__getobj__.cancellation_policy).upcase
+        String(__getobj__.show_cancellation_policy).upcase
       end
 
       def build_room(rooms)
