@@ -10,17 +10,16 @@ module HotelBeds
       attribute :from_date, attr: "dateFrom"
       attribute :from_time, attr: "time"
 
-      # attributes
-      # attribute :from do |doc|
-      #   el = doc.at_css("DateTimeFrom")
-      #   v, year, month, day = *el.attr("dateFrom").match(/^(\d{4})(\d{2})(\d{2})$/)
-      #   if el.attr("time")
-      #     v, hour, minute = *el.attr("time").match(/^(\d{2})(\d{2})$/)
-      #   else
-      #     hour, minute = 0, 0
-      #   end
-      #   Time.new(year, month, day, hour, minute)
-      # end
+      def from_date=(str)
+        v = str.match(/^(\d{4})(\d{2})(\d{2})$/)
+        super("#{v[1]}-#{v[2]}-#{v[3]}")
+      end
+
+      def from_time=(str)
+        v = str.match(/^(\d{2})(\d{2})$/)
+        super("#{v[1]}:#{v[2]}")
+      end
+
     end
   end
 end
