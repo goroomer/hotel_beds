@@ -31,7 +31,7 @@ module HotelBeds
       # validation
       validates :is_selling_price_mandatory, length: { is: 1 }
 
-      def description(str)
+      def description=(str)
         str.split(" ").map{|word| word.downcase.capitalize}.join(' ')
       end
 
