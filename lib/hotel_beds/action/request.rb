@@ -7,11 +7,11 @@ module HotelBeds
 
       # attributes
       attribute :language, String, default: "ENG"
-      attribute :yes, String, default: "Y"
+      attribute :cancellation_policy, String, default: "Y"
 
       # validation
       validates :language, length: { is: 3 }
-      validates :yes, length: { is: 1 }
+      validates :cancellation_policy, length: { is: 1 }
     end
   end
 end
