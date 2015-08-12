@@ -10,7 +10,7 @@ module HotelBeds
       # attributes
       attribute :id, Integer
       attribute :room_count, Integer
-      # attribute :description, String
+      attribute :description, String
       attribute :board, String
       attribute :board_code, String
       attribute :room_type_code, String
