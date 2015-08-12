@@ -29,7 +29,7 @@ module HotelBeds
                 selector: "HotelRoom > TaxList > Tax", multiple: true,
                 parser: HotelBeds::Parser::Tax
       attribute :cancellation_policies,
-        selector: "HotelRoom CancellationPolicy", multiple: true,
+        selector: "HotelRoom > CancellationPolicies > CancellationPolicy", multiple: true,
         parser: HotelBeds::Parser::CancellationPolicy
       attribute :rates,
         selector: "Price PriceList Price", multiple: true,

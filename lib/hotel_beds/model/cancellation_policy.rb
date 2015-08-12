@@ -7,8 +7,8 @@ module HotelBeds
 
       # attributes
       attribute :amount, BigDecimal
-      attribute :from, Time
-      attribute :to, Time
+      attribute :from_date, String
+      attribute :from_time, String
     end
   end
 end

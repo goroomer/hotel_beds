@@ -12,7 +12,8 @@ module HotelBeds
           :Language => language,
           :CheckInDate => check_in_date,
           :CheckOutDate => check_out_date,
-          :OccupancyList => occupancy_list
+          :OccupancyList => occupancy_list,
+          :ShowCancellationPolicies => show_cancellation_policy
         }.merge(Hash(destination)).merge(Hash(hotels)).merge(Hash(extra_params))
       end
 
@@ -69,6 +70,10 @@ module HotelBeds
       def occupancy_list
         grouped_rooms = Array(rooms).group_by(&:group_key).values
         { HotelOccupancy: grouped_rooms.map(&method(:build_room)) }
+      end
+
+      def show_cancellation_policy
+        String(__getobj__.y).upcase
       end
 
       def build_room(rooms)

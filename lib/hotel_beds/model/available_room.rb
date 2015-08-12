@@ -10,7 +10,7 @@ module HotelBeds
       # attributes
       attribute :id, Integer
       attribute :room_count, Integer
-      attribute :description, String
+      # attribute :description, String
       attribute :board, String
       attribute :board_code, String
       attribute :room_type_code, String
@@ -30,6 +30,11 @@ module HotelBeds
 
       # validation
       validates :is_selling_price_mandatory, length: { is: 1 }
+
+      def description(str)
+        str.split(" ").map{|word| word.downcase.capitalize}.join(' ')
+      end
+
 
       def rates=(values)
         if values.kind_of?(Array)
