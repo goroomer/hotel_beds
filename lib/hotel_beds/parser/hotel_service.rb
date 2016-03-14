@@ -1,6 +1,7 @@
 require "hotel_beds/parser/hotel"
 require "hotel_beds/parser/supplier"
 require "hotel_beds/parser/reference"
+require "hotel_beds/parser/available_room"
 
 module HotelBeds
   module Parser
@@ -17,6 +18,9 @@ module HotelBeds
         parser: HotelBeds::Parser::Supplier
       attribute :reference, selector: "Reference",
         parser: HotelBeds::Parser::Reference
+      attribute :available_rooms, selector: "AvailableRoom", multiple: true,
+        parser: HotelBeds::Parser::AvailableRoom
+
     end
   end
 end

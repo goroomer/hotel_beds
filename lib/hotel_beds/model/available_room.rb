@@ -24,9 +24,11 @@ module HotelBeds
       attribute :number_available, Integer
       attribute :rates, Hash[Date => BigDecimal]
       attribute :cancellation_policies, Array[HotelBeds::Model::CancellationPolicy],
-        default: Array.new
+                default: Array.new
       attribute :customers, Array[HotelBeds::Model::Customer],
-        default: Array.new
+                default: Array.new
+      attribute :basket_cancellation_policy, Array[HotelBeds::Model::CancellationPolicy],
+                default: Array.new
 
       # validation
       validates :is_selling_price_mandatory, length: { is: 1 }
@@ -34,7 +36,6 @@ module HotelBeds
       def description=(str)
         super(str.split(" ").map{|word| word.downcase.capitalize}.join(' '))
       end
-
 
       def rates=(values)
         if values.kind_of?(Array)
@@ -51,6 +52,7 @@ module HotelBeds
           super
         end
       end
+
     end
   end
 end

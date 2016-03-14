@@ -1,6 +1,7 @@
 require "hotel_beds/model/hotel"
 require "hotel_beds/model/supplier"
 require "hotel_beds/model/reference"
+require "hotel_beds/model/available_room"
 
 module HotelBeds
   module Model
@@ -15,6 +16,7 @@ module HotelBeds
       attribute :amount, BigDecimal
       attribute :supplier, HotelBeds::Model::Supplier
       attribute :reference, HotelBeds::Model::Reference
+      attribute :available_room, HotelBeds::Model::AvailableRoom
     end
   end
 end

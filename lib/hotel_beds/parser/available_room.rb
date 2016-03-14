@@ -31,6 +31,9 @@ module HotelBeds
       attribute :cancellation_policies,
                 selector: 'HotelRoom > CancellationPolicies > CancellationPolicy', multiple: true,
                 parser:   HotelBeds::Parser::CancellationPolicy
+      attribute :basket_cancellation_policy,
+                selector: 'HotelRoom > CancellationPolicy > Price', multiple: true,
+                parser:   HotelBeds::Parser::CancellationPolicy
       attribute :rates,
                 selector: 'Price PriceList Price', multiple: true,
                 parser:   HotelBeds::Parser::Price
